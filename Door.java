@@ -5,8 +5,13 @@ public class Door extends MapSite{
 	private Room _originRoom;
 	private Room _destinationRoom;
 	private Boolean _isOpen;
+	private int _doorType;
 	
 	public Door(Room originRoom, Room destinationRoom){
+		
+		
+		_originRoom = originRoom;
+		_destinationRoom = destinationRoom;
 		
 	}
 	

@@ -9,19 +9,30 @@ package maze_generator;
  */
 public class Room extends MapSite{
 
+	//DECLARATIONS
 	private MapSite _sides[] = new MapSite[6];
-	private int _roomX, _roomY, _roomZ;
-	
+	private int _roomX, _roomY, _roomZ, _roomType;
 	public enum Direction{
 		NORTH, EAST, SOUTH, WEST, UP, DOWN
 	}
 	
+	//INITIALIZE
 	public Room(int roomX, int roomY, int roomZ){
 		_roomX = roomX;
 		_roomY = roomY;
 		_roomZ = roomZ;
 	}
 	
+	// GETS
+	public int GetRoomX(){
+		return _roomX;
+	};
+	public int GetRoomY(){
+		return _roomY;
+	}
+	public int GetRoomZ(){
+		return _roomZ;
+	}
 	public MapSite GetSide(Direction direction){
 		
 		final MapSite _sideBody;
@@ -51,10 +62,12 @@ public class Room extends MapSite{
 		return _sideBody;
 	}
 	
+	//SETS
 	public void SetSide(Direction direction, MapSite Source){
 		
 	}
 	
+	//ACTIONS
 	public void Enter(){
 		
 	}

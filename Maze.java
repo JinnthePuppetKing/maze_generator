@@ -1,7 +1,11 @@
 package maze_generator;
 
+import java.util.ArrayList;
+
 public class Maze {
 
+	private ArrayList<Room> Rooms = new ArrayList<Room>();
+	
 	public Maze(){
 		
 	}
@@ -16,4 +20,5 @@ public class Maze {
 		
 		return _result;
 	}
+	
 }
