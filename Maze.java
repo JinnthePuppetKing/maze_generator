@@ -6,11 +6,13 @@ public class Maze {
 
 	private ArrayList<Room> Rooms = new ArrayList<Room>();
 	
+	//INSTNATIATE
 	public Maze(){
 		
 	}
 	
-	public void AddRoom(Room _room){
+	//ROOMS
+	public void AddRoom(Room _room, int X, int Y, int Z){
 		
 	}
 	public Room RoomLookup(int X, int Y, int Z){

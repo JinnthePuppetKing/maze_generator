@@ -7,11 +7,10 @@ public abstract class MazeFactory {
 	 * parameters for each type of maze we'd like to return.
 	 */
 	
-	abstract public Maze MakeGrid();
+	abstract public Grid MakeGrid();
 	abstract public Wall MakeWall();
 	abstract public Door MakeDoor();
 	abstract public Room MakeRoom();
-	abstract public Maze PopulateGrid();
-	
+	abstract public Maze MakeMaze();
 	
 }

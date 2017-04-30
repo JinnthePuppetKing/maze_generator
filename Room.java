@@ -12,6 +12,7 @@ public class Room extends MapSite{
 	//DECLARATIONS
 	private MapSite _sides[] = new MapSite[6];
 	private int _roomX, _roomY, _roomZ, _roomType;
+	private boolean _isEntrance = false;
 	public enum Direction{
 		NORTH, EAST, SOUTH, WEST, UP, DOWN
 	}
