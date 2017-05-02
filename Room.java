@@ -4,15 +4,19 @@
 package maze_generator;
 
 /**
- * @author nicholasgervais
+ * @author Nicholas Scott
  *
  */
+
 public class Room extends MapSite{
 
 	//DECLARATIONS
 	private MapSite _sides[] = new MapSite[6];
 	private int _roomX, _roomY, _roomZ, _roomType;
-	private boolean _isEntrance = false;
+	private boolean _Entrance = false;
+	private boolean _Entity = false;
+	private boolean _Checked = false;
+	
 	public enum Direction{
 		NORTH, EAST, SOUTH, WEST, UP, DOWN
 	}
@@ -36,7 +40,7 @@ public class Room extends MapSite{
 	}
 	public MapSite GetSide(Direction direction){
 		
-		final MapSite _sideBody;
+		MapSite _sideBody;
 		switch (direction) {
 			case NORTH:
 				_sideBody = _sides[0];
@@ -62,14 +66,38 @@ public class Room extends MapSite{
 		
 		return _sideBody;
 	}
+	public boolean is_Entrance() {
+		return _Entrance;
+	}
+	public boolean is_Entity() {
+		return _Entity;
+	}
+	public boolean is_Checked() {
+		return _Checked;
+	}
 	
 	//SETS
 	public void SetSide(Direction direction, MapSite Source){
 		
 	}
+	public void set_roomType(int _roomType) {
+		this._roomType = _roomType;
+	}
+	public void set_Entrance(boolean _Entrance) {
+		this._Entrance = _Entrance;
+	}
+	public void set_Entity(boolean _Entity) {
+		this._Entity = _Entity;
+	}	
+	public void set_Checked(boolean _Checked) {
+		this._Checked = _Checked;
+	}	
 	
 	//ACTIONS
 	public void Enter(){
 		
 	}
+
+
+
 }

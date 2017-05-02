@@ -9,12 +9,12 @@ public class MazeInterpreter {
 		
 	}
 	public Grid XMLtoGrid(){
-		
+		return null;
 	}
 	public void MazetoGrid(){
 		
 	}
 	public Maze XMLtoMaze(){
-		
+		return null;
 	}
 }
