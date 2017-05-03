@@ -22,13 +22,19 @@ public class Room extends MapSite{
 	}
 	
 	//INITIALIZE
-	public Room(int roomX, int roomY, int roomZ){
+	public Room(int roomX, int roomY, int roomZ, int roomType){
 		_roomX = roomX;
 		_roomY = roomY;
 		_roomZ = roomZ;
+		_roomType = roomType;
 	}
 	
+
+
 	// GETS
+	public int get_roomType() {
+		return _roomType;
+	}
 	public int GetRoomX(){
 		return _roomX;
 	};
@@ -79,6 +85,28 @@ public class Room extends MapSite{
 	//SETS
 	public void SetSide(Direction direction, MapSite Source){
 		
+		switch (direction) {
+		case NORTH:
+			_sides[0] = Source;
+			break;
+		case EAST:
+			_sides[1] = Source;
+			break;
+		case SOUTH:
+			_sides[2] = Source;
+			break;
+		case WEST:
+			_sides[3] = Source;
+			break;
+		case UP:
+			_sides[4] = Source;
+			break;
+		case DOWN:
+			_sides[5]  = Source;
+			break;
+		default:
+			throw new IllegalStateException("Unknown Directional");
+		}
 	}
 	public void set_roomType(int _roomType) {
 		this._roomType = _roomType;

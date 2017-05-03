@@ -2,16 +2,11 @@ package maze_generator;
 
 public class MazeInterpreter {
 
-	public void MazeInterpreter(){
+	public MazeInterpreter(){
 		
 	}
-	public void GridtoXML(){
-		
-	}
-	public Grid XMLtoGrid(){
-		return null;
-	}
-	public void MazetoGrid(){
+
+	public void MazetoXML(){
 		
 	}
 	public Maze XMLtoMaze(){

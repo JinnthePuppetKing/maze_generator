@@ -8,6 +8,7 @@ import java.util.Set;
 public class Maze {
 
 	private int uncheckedRooms = 0;
+	private int entityRooms = 0;
 	private int entranceRooms = 0;
 	private ArrayList<Room> Rooms = new ArrayList<Room>();
 	
@@ -20,15 +21,21 @@ public class Maze {
 	public void AddRoom(Room _room){
 	
 		//Check to make sure duplicate room doesn't exist
-		//NOT DONE
+		Room _roomCheck;
+		
+		_roomCheck = this.RoomLookup(_room.GetRoomX(), _room.GetRoomY(), _room.GetRoomZ());
+		if (_roomCheck != null){
+			throw new IllegalArgumentException("Coordinate Value already exists");
+		}
 		if (!_room.is_Entrance()){
 			
 			entranceRooms++;
 		}
 		if (!_room.is_Entity()){
 			
-			uncheckedRooms++;
+			entityRooms++;
 		}
+		uncheckedRooms++;
 		Rooms.add(_room);
 		this.checkedReset();
 		
@@ -49,6 +56,30 @@ public class Maze {
 		}
 		// Search through room for desired result
 		return null;
+	}
+	public void MakeEntity(Room entityRoom){
+		if (!entityRoom.is_Entity()){	
+			entityRoom.set_Entity(true);
+			entityRooms++;
+		}
+	}
+	public void RemoveEntity(Room entityRoom){
+		if (entityRoom.is_Entity()){	
+			entityRoom.set_Entity(false);
+			entityRooms--;
+		}
+	}
+	public void MakeEntrance(Room entranceRoom){
+		if (!entranceRoom.is_Entrance()){
+			entranceRoom.set_Entrance(true);
+			entranceRooms++;
+		}
+	}
+	public void RemoveEntrance(Room entranceRoom){
+		if (entranceRoom.is_Entrance()){
+			entranceRoom.set_Entrance(false);
+			entranceRooms--;
+		}
 	}
 	public boolean ValidateRoomArray(){
 		
@@ -142,7 +173,6 @@ public class Maze {
 		}
 		return true;
 	}
-
 	private void checkedReset() {
 		for (int i = 0 ; i < Rooms.size() ; i++){
 			Rooms.get(i).set_Checked(false);
